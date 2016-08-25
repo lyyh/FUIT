@@ -1,0 +1,59 @@
+/*
+ * 公有CSS定义
+ *
+ * #######################################################
+ *
+ * name:FUI common scss
+ * desc:包括公有颜色定义、字体定义、reset.css定义等
+ * author:beyond
+ * time:2016-08-17 08:48:00
+ *
+ * #######################################################
+*/
+
+/*
+ * 颜色定义
+*/
+@fColorWhite: #fff;
+@fColorTheme: #2f4050;
+@fColorGreen: #1ab394;
+@fColorBlue: #47AFF9;
+@fColorGray: #e6e6e6;
+@fColorBlack: #333;
+/*
+ * 字体定义
+*/
+@fFont13: 13px;
+
+
+/*
+ * 图片定义
+*/
+
+/*
+ * 样式消除定义
+*/
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color: @fColorWhite;
+}
+
+html,body {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: @fFont13;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+// 左浮动
+.f-fl{
+	float: left;
+}
+//向右浮动
+.f-fr{
+	float: right;
+}

@@ -1,0 +1,18 @@
+
+# 忽略文件
+
+dist/
+.idea/
+node_modules/
+bin/
+build/
+
+bower_components/
+
+*.class
+*.jar
+*.war
+*.ear
+
+.DS_Store
+.log

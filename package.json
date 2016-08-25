@@ -1,0 +1,31 @@
+{
+  "name": "common-system",
+  "version": "1.0.0",
+  "description": "自定义主题系统",
+  "main": "index.js",
+  "scripts": {
+    "start": "fis3 release -wLd ./dist"
+  },
+  "dependencies": {
+    "fis-parser-babel-5.x": "^1.4.0",
+    "fis3-hook-amd": "^0.1.18",
+    "fis3-postpackager-loader": "^1.5.3",
+    "fis3-preprocessor-autoprefixer": "0.1.0",
+    "fis3-preprocessor-js-require-file": "^0.1.0",
+    "postcss": "^5.1.2"
+  },
+  "devDependencies": {
+    "fis-parser-less-2.x": "^0.1.4",
+    "fis3-hook-commonjs": "^0.1.25"
+  },
+  "keywords": [
+    "后台管理系统",
+    "自定义主题",
+    "适合多种类型系统",
+    "bootstrap框架",
+    "响应式",
+    "组件化"
+  ],
+  "author": "liuyh <374659635@qq.com> (http://blog.liuyanhao.cn/)",
+  "license": "MIT"
+}
