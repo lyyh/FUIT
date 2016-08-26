@@ -4,18 +4,18 @@ fis.set('project.files', ['dev/**']);
 
 /*设置发布路径*/
 fis.match(/\/dev\/(.*)/i, {
-    release: '/FUIT/$1', /*所有资源发布时产出到 /dist 目录下*/
+    release: '/FUIT/$1', /*所有资源发布时产出到 /FUIT 目录下*/
     url: '/FUIT/$1' /*所有资源访问路径设置*/
 });
 
 /*模块化加载器配置*/
-// fis.match('::package', {
-//   postpackager: fis.plugin('loader', {
-//     allInOne: true, //js&css打包成一个文件
-//     sourceMap: true, //是否生成依赖map文件
-//     useInlineMap: true //是否将sourcemap作为内嵌脚本输出
-//   })
-// });
+fis.match('::package', {
+  postpackager: fis.plugin('loader', {
+    // allInOne: true, //js&css打包成一个文件
+    sourceMap: true, //是否生成依赖map文件
+    useInlineMap: true //是否将sourcemap作为内嵌脚本输出
+  })
+});
 
 /*指定模块化插件*/
 fis.hook('amd', {
@@ -23,26 +23,31 @@ fis.hook('amd', {
         $: '/dev/common/lib/js/jquery',
         bs: '/dev/common/lib/bootstrap/js/bootstrap',
         mk: '/dev/common/lib/js/mock',
-        handlebars:"/dev/common/lib/js/handlebars"
+        handlebars:"/dev/common/lib/js/handlebars",
+        loadModule: '/dev/system/js/load-module',
+        conf: '/dev/system/conf'
     },
     shim: {
-        bs: ['$'],
-        'handlebars': {
+        bs:{
+          deps:['$'],
+          exports: 'bs'
+        } ,
+        handlebars: {
             exports: 'Handlebars'
+        },
+        $: {
+          deps: ['$'],
+          exports: '$'
         }
     }
 });
 
 /*指定哪些目录下的文件执行define包裹*/
-fis.match('/dev/static/js/components/**', {
+fis.match('/dev/system/**', {
   isMod: true
 });
 
-fis.match('/dev/static/js/custom/**', {
-  isMod: true
-});
-
-fis.match('/dev/frame/**', {
+fis.match('/dev/modules/**', {
   isMod: true
 });
 

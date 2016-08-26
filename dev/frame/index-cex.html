@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-cache">
+	<title>首页</title>
+	<meta name="description" content="可用于大部分后台管理及个人操作">
+	<meta name="keywords" content="公共管理系统,公共个人信息系统,bootstrap框架,自定义主题,响应式,组件化">
+	<link href="../common/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../common/lib/FontAwesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../common/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.less">
+</head>
+<body>
+    <div class='wrap'>
+    	<div id='g-head'></div>
+    	<div id='g-side'></div>
+    	<div id='g-main'></div>
+    </div>
+
+    <script src='/dev/common/lib/js/require.js'></script>
+    <script>
+    	require(['loadModule'],function(LM){
+    		var g_head = 'g-head',
+    			g_side = 'g-side',
+    			g_main = 'g-main',
+    			array = {
+                    head: g_head,
+                    side: g_side,
+                    main: g_main
+                };
+
+            //加载模块
+    		LM.loadHtml(array);
+    	})
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@import '/dev/modules/common/css/customImport-sim.less';
+
+.m-hd{
+	.m-hd-bg;
+	::after{
+		clear: both;
+	}
+	::before{
+		clear: both;
+	}
+}
+.m-setting{
+	// .f-fr;
+}
+.m-list{
+	overflow: hidden;
+	li{
+		padding: 20px;
+		.f-fl;
+		&:hover{
+			// cursor: pointer;
+			// opacity: .2
+			cursor: pointer;
+			background-color: rgba(0,0,0,0.1)
+		}
+	}
+}
