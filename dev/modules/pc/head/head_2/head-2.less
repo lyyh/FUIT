@@ -1,19 +1,60 @@
 @import '/dev/modules/common/css/head/custom-hd-sim.less';
 /*头部模块 begin*/
+.m-hd{
+	height: 100%;
+	box-shadow: 0 1px 1px 1px #ddd;
+}
 .m-setting{
 	float: right;
 }
 .m-list{
 	li{
 		float: left;
-		padding: 20px;
+		padding: 25px;
 		&:hover{
 			cursor: pointer;
 			.bgDeepTran;
 		}
 	}
 }
+/*头部模块 end*/
+/*tab 标签 begin*/
 .m-tab{
 	float: left;
 }
-/*头部模块 end*/
+.m-tab .u-tab-list li{
+	float: left;
+}
+.m-tab .u-tab-list a{
+	display: inline-block;
+	color: #b7b7b7;
+	font-size: 18px;
+	padding: 28px;
+	border-right: 1px solid #ccc;
+	&:hover{
+		cursor: pointer;
+		text-decoration: none;
+		background-color: #909090;
+		color: #fff;
+	}
+	&:visited{
+		cursor: pointer;
+		text-decoration: none;
+		background-color: #909090;
+		color: #fff;
+	}
+	.transition;
+}
+.tab-close{
+	display: inline-block;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #ccc;
+	&:hover{
+		background-color: #333;
+	}
+}
+/*tab 标签 end*/

@@ -16,11 +16,10 @@ define(['$','conf'],function($,conf){
 	function loadSimPage(obj,item){
 		var side = obj.side,
 			side_sm = obj.side_sm,
-			main = obj.main,
 			head = obj.head,
-			body = obj.body,
+			main = obj.main,
 			objArray = [{
-				url: item.hd_url,
+				url: item.head_url,
 				selector: '#' + head
 			},{
 				url: item.side_url,
@@ -28,6 +27,9 @@ define(['$','conf'],function($,conf){
 			},{
 				url:item.side_sm_url,
 				selector: '#' + side_sm
+			},{
+				url:item.main_url,
+				selector: '#' + main
 			}]
 
 		ajaxLoad(objArray)
