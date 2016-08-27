@@ -1,5 +1,5 @@
 html{
-	min-width: 1000px
+	min-width: 1000px;
 }
 /*侧栏部分 begin*/
 .side{
@@ -11,13 +11,27 @@ html{
 	.side;
 }
 #g-side{
+	z-index: 10;
 	width: 280px;
 }
 #g-side-sm{
-	width: 50px;
+	z-index: 1;
+	left: -80px;
+	width: 80px;
 }
 #g-main{
 	overflow: hidden;
 }
-
 /*侧栏部分 end*/
+/*侧栏固定部分 begin*/
+.g-side-bd,.g-side-bd-sm{
+	height: 100%;
+	float: left;
+}
+.g-side-bd{
+	width: 280px;
+}
+.g-side-bd-sm{
+	width: 0px;
+}
+/*侧栏固定部分 end*/

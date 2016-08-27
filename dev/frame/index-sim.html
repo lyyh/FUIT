@@ -16,24 +16,26 @@
 </head>
 <body>
     	<div id="g-side"></div>
-        <div id='g-side-sm'>
-            
-        </div>
-		<div id="g-main">
+        <div id='g-side-sm'></div>
+        <div class='g-side-bd'></div>
+        <div class='g-side-bd-sm'></div>
+        <div id="g-main">
 			<div id="g-hd"></div>
 			<div id="g-bd"></div>
-    </div>
+        </div>
 
     <script src='/dev/common/lib/js/require.js'></script>
     <script>
     	require(['loadModule'],function(LM){
     		var g_side = 'g-side',
+                g_side_sm ='g-side-sm',
                 g_main = 'g-main',
                 g_hd = 'g-hd',
                 g_bd = 'g-bd',
     			obj = {
                     type: 'sim', //简约型
                     side: g_side,
+                    side_sm: g_side_sm,
                     main: g_main,
                     head: g_hd,
                     body: g_bd

@@ -15,6 +15,7 @@ define(['$','conf'],function($,conf){
 	//简约型
 	function loadSimPage(obj,item){
 		var side = obj.side,
+			side_sm = obj.side_sm,
 			main = obj.main,
 			head = obj.head,
 			body = obj.body,
@@ -24,6 +25,9 @@ define(['$','conf'],function($,conf){
 			},{
 				url: item.side_url,
 				selector: '#' + side
+			},{
+				url:item.side_sm_url,
+				selector: '#' + side_sm
 			}]
 
 		ajaxLoad(objArray)

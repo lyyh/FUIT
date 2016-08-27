@@ -1,4 +1,24 @@
 define(['$', 'handlebars'], function($, HB) {
+	jQuery.fn.slideLeftHide = function( speed, callback ) {  
+        this.animate({  
+            width : "hide",  
+            paddingLeft : "hide",  
+            paddingRight : "hide",  
+            marginLeft : "hide",  
+            marginRight : "hide"  
+        }, speed, callback );  
+    };  
+    jQuery.fn.slideLeftShow = function( speed, callback ) {  
+        this.animate({  
+            width : "show",  
+            paddingLeft : "show",  
+            paddingRight : "show",  
+            marginLeft : "show",  
+            marginRight : "show"  
+        }, speed, callback );  
+    };  
+
+
 	/*注册helper begin*/
 	HB.registerHelper('tree', function() {
 		var str = '';
@@ -15,12 +35,12 @@ define(['$', 'handlebars'], function($, HB) {
 					offset = 10 * level;
 
 				if(item.children.length){
-					str += '<li><a class="subMenu" data-sel=""><i class="fa fa-fw fa-th-list f-fl" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i>' + item.text + '<i class="fa fa-fw fa-angle-up fa-lg u-sub-menu"></i></a>';
+					str += '<li><a class="subMenu" data-sel=""><i class="'+item.icon+'" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i>' + item.text + '<i class="fa fa-fw fa-angle-up fa-lg u-sub-menu"></i></a>';
 					str += '<ul class="z-hide">';
 					getTreeHtml(item.children);
 					str += '</ul>';
 				}
-				else str += '<li><a><i class="fa fa-fw fa-th-list f-fl" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i>' + item.text + '</a>';
+				else str += '<li><a><i class="'+item.icon+'" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i>' + item.text + '</a>';
 				
 				str += '</li>';
 			})
@@ -48,9 +68,15 @@ define(['$', 'handlebars'], function($, HB) {
 	
 	/*绑定菜单事件 begin*/
 	function menuActions(){
+		/*显示菜单点击效果 begin*/
+		$('.m-menu-bd a').click(function(){
+			$('.m-menu-bd a:not('+this+')').removeClass('z-sel');
+			$(this).toggleClass('z-sel');
+		})
+
+		/*显示菜单点击效果 end*/
 		/*菜单展开 收缩 begin*/
 		$('.subMenu').click(function(){
-			$(this).toggleClass('z-sel');
 			$(this).children().eq(1).toggleClass('fa-angle-down')
 
 			if(!$(this).attr('data-sel')){
@@ -65,10 +91,26 @@ define(['$', 'handlebars'], function($, HB) {
 		/*菜单展开 收缩 end*/
 
 		/*侧栏展开 收缩 begin*/
+		//收缩
 		$('.u-menu-hd').click(function(){
 			$('#g-side').animate({left:-280},400);
+			$('#g-side-sm').animate({left:0},400);
+
+			$('.g-side-bd').hide(400,function(){
+				$('.g-side-bd-sm').css('width','80px');
+			});
+		})
+
+		//展开
+		$('.u-menu-hd-sm').click(function(){
+			$('.g-side-bd-sm').css('width',0);
+
+			$('#g-side').animate({left:0},400);
+			$('#g-side-sm').animate({left:-80},400)
+			$('.g-side-bd').show(400);
 		})
 		/*侧栏展开 收缩 end*/
+
 	}
 	/*绑定菜单事件 end*/
 	return {
