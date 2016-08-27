@@ -1,36 +1,46 @@
 define(['$','conf'],function($,conf){
-	var hdhtml_url = conf.url;
 
 	/*加载页面 begin*/
 	function loadHtml(obj){
-		if(obj.type == 'sim')loadSimPage(obj);
+		if(obj.type == 'sim'){
+			conf.configs.forEach(function(item){
+				if(item.type == 'sim'){
+					loadSimPage(obj,item);
+				}
+			})
+		}
 		else if(obj.type == 'cex')loadCexPage(obj);
 	}
 	/*加载页面 end*/
-	function loadSimPage(obj){
+	//简约型
+	function loadSimPage(obj,item){
 		var side = obj.side,
 			main = obj.main,
 			head = obj.head,
 			body = obj.body,
 			objArray = [{
-				hdhtml_url: hdhtml_url,
-				hd_sel: '#' + head
+				url: item.hd_url,
+				selector: '#' + head
+			},{
+				url: item.side_url,
+				selector: '#' + side
 			}]
 
 		ajaxLoad(objArray)
 	}
 
+	//复杂型
+	function loadCexPage(obj){
+
+	}
 	/*页面类型 begin*/
 
 	/*页面类型 end*/
 	/*ajax 加载 being*/
 	function ajaxLoad(objArr){
 		objArr.forEach(function(item){
-			console.log(item.hdhtml_url)
-			console.log(item.hd_sel)
-
-			$.get(item.hdhtml_url, function(data) {
-				$(item.hd_sel).append(data)
+			$.get(item.url, function(data) {
+				$(item.selector).append(data)
 			});
 		})
 		

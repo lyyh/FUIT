@@ -1,13 +1,23 @@
-@import '/dev/common/css/commonImport.less';
-
+html{
+	min-width: 1000px
+}
 /*侧栏部分 begin*/
-#g-side{
+.side{
+	position: absolute;
 	height: 100%;
-	width: 20%;
-	background-color: #ddd;
-	.f-fl;
+	float: left;
+}
+#g-side,#g-side-sm{
+	.side;
+}
+#g-side{
+	width: 280px;
+}
+#g-side-sm{
+	width: 50px;
 }
 #g-main{
 	overflow: hidden;
 }
+
 /*侧栏部分 end*/

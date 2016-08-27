@@ -1,0 +1,75 @@
+[
+	{
+		"id": 1,
+		"subId": 0,
+		"menus_status": 0,
+		"level": 1,
+		"text": "学生管理",
+		"icon": "fa fa-users fa-fa",
+		"url": "",
+		"children": [
+		{
+			"id": 2,
+			"subId": 1,
+			"menus_status": 0,
+			"level": 2,
+			"text": "删除学生",
+			"icon": "",
+			"url": "",
+			"children": []
+		},
+		{
+		"id": 3,
+		"subId": 1,
+		"menus_status": 0,
+		"level": 2,
+		"text": "添加学生",
+		"icon": "",
+		"url": "",
+		"children": []
+		}
+		]
+	},
+	{
+		"id": 4,
+		"subId": 0,
+		"menus_status": 0,
+		"level": 1,
+		"text": "系统管理",
+		"icon": "",
+		"url": "",
+		"children": [
+		{
+
+			"id": 6,
+			"subId": 1,
+			"menus_status": 0,
+			"level": 2,
+			"text": "添加模块",
+			"icon": "",
+			"url": "",
+			"children": []
+		},
+		{
+		"id": 7,
+		"subId": 1,
+		"menus_status": 0,
+		"level": 2,
+		"text": "更改系统配置",
+		"icon": "",
+		"url": "",
+		"children": []
+		}	
+		]
+	},
+	{
+		"id": 5,
+		"subId": 0,
+		"menus_status": 0,
+		"level": 1,
+		"text": "用户管理",
+		"icon": "",
+		"url": "",
+		"children": []
+	}
+]

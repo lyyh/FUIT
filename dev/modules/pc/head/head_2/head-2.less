@@ -1,27 +1,17 @@
-@import '/dev/modules/common/css/customImport-sim.less';
-
-.m-hd{
-	.m-hd-bg;
-	::after{
-		clear: both;
-	}
-	::before{
-		clear: both;
-	}
-}
+@import '/dev/modules/common/css/head/custom-hd-sim.less';
+/*头部模块 begin*/
 .m-setting{
-	// .f-fr;
+	float: right;
 }
 .m-list{
-	overflow: hidden;
 	li{
-		padding: 20px;
-		.f-fl;
+		float: left;
+		padding: 25px;
 		&:hover{
-			// cursor: pointer;
-			// opacity: .2
 			cursor: pointer;
-			background-color: rgba(0,0,0,0.1)
+			.bgDeepTran;
 		}
 	}
 }
+
+/*头部模块 end*/

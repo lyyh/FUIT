@@ -18,8 +18,37 @@
 @fColorTheme: #2f4050;
 @fColorGreen: #1ab394;
 @fColorBlue: #47AFF9;
-@fColorGray: #e6e6e6;
+@fColorGray: #e5e5e5;
 @fColorBlack: #333;
+/*
+  背景颜色
+*/
+// @bgColorBlack: #262B34;
+@bgColorGray: #e8e8e8;
+@bgColorBlue: #47AFF9;
+@bgColorGreen: #1ab394;
+@bgColorTheme: #2f4050;
+@bgColorDarkBlue: #378CC6;
+@bgColorLightBlue: #47AFF9;
+@bgColorWhite: #fff;
+@bgColorLightgray: #E4E4E4;
+@bgColorDarkBlack: #000;
+@bgColorLightRed: #f14649;
+@bgColorBlack: #252535;
+
+/*
+  背景 
+  透明度
+*/
+@bgDeepTran: rgba(0,0,0,.2);
+.bgDeepTran{
+  background-color: @bgDeepTran;
+}
+@bgShallowTran: rgba(0,0,0,.7);
+.bgShallowTran{
+  background-color: @bgShallowTran
+}
+
 /*
  * 字体定义
 */
@@ -57,7 +86,8 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
 .f-fr{
 	float: right;
 }
-/*清除浮动带来的影响*/
-.clearfix{
-	clear: both;
+
+/*transition 动画*/
+.transition{
+	transition: background-color 0.8s;
 }

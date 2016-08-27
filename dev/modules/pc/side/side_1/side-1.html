@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="side-1.less">
+	</head>
+	<body>
+	<!-- 左侧栏 begin -->
+		<div class='m-side'>
+		<!-- 左侧栏头部 begin-->
+			<div class="m-side-hd">
+				<div class="u-icon">
+					<img src="../../../common/img/icon.png">
+				</div>
+				<div class='introduce'>
+					<p class='number'><span class="">教师编号:</span><span class="">1</span></p>
+					<p class='username'>教师姓名:007</p>
+				</div>
+			</div>
+		<!-- 左侧栏头部 end-->
+
+		<!-- 左侧栏内容 begin--> 
+			<div class="m-menu-list">
+				<div class='u-menu-hd clearfix'>
+					<a>
+						<i class='fa fa-chevron-left fa-lg'></i>
+					</a>
+				</div>
+				<div class="m-menu-bd">
+				</div>
+			</div>
+		<!-- 左侧栏内容 end-->
+		</div>
+		<!-- 左侧栏 end -->
+
+		<div class="m-side-sm">
+			<!-- 左侧栏内容 收缩 begin-->
+			<div class='m-side-hd-sm'>
+			
+			</div>
+			<div class="m-menu-list-sm">
+				
+			</div>
+		<!-- 左侧栏内容 收缩 end-->
+		</div>
+
+		<!-- 菜单模板 begin-->
+		<script type="x-handlebars-templage" id='menusTree'>
+			{{tree}}
+		</script>
+		<!-- 菜单模板 end-->
+	
+	</body>
+	<script src='../../../../common/lib/js/require.js'></script>
+	<script type="text/javascript">
+		require(['loadMenus'],function(LMenus){
+			LMenus.initMenus();
+		})
+	</script>
+</html>

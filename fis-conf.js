@@ -24,8 +24,9 @@ fis.hook('amd', {
         bs: '/dev/common/lib/bootstrap/js/bootstrap',
         mk: '/dev/common/lib/js/mock',
         handlebars:"/dev/common/lib/js/handlebars",
-        loadModule: '/dev/system/js/load-module',
-        conf: '/dev/system/conf'
+        loadModule: '/dev/system/js/loadModule',
+        loadMenus: '/dev/system/js/loadMenus',
+        conf: '/dev/system/conf',
     },
     shim: {
         bs:{
@@ -70,10 +71,10 @@ fis.match('*.css', {
 });
 
 /*压缩js*/
-fis.match('*.js', {
-  // fis-optimizer-uglify-js 插件进行压缩，已内置
-  optimizer: fis.plugin('uglify-js')
-});
+// fis.match('*.js', {
+//   // fis-optimizer-uglify-js 插件进行压缩，已内置
+//   optimizer: fis.plugin('uglify-js')
+// });
 
 /*压缩css*/
 fis.match('*.css', {

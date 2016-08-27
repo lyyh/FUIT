@@ -1,0 +1,71 @@
+@import '/dev/modules/common/css/side/custom-side-sim.less';
+/*菜单头部 begin*/
+.m-side-hd .u-icon{
+	padding:9px;
+	display: inline-block;
+}
+.m-side-hd .u-icon img{
+	width: 55px;
+	height: 55px;
+}
+.m-side-hd .introduce{
+	display: inline-block;
+	padding:18px;
+	margin-left: 20px;
+	vertical-align: top;
+	font-size: 18px;
+}
+.username,.number{
+	color:@fColorWhite;
+}
+.username{
+	margin-top: 5px;
+}
+/*菜单头部 end*/
+/*菜单主体 展开 begin*/
+.u-menu-hd,.m-menu-bd a{
+	&:hover{
+		cursor: pointer;
+		.menuSelBlue;
+		text-decoration: none;
+	}
+	.transition;
+}
+.u-menu-hd{
+	padding: 15px 15px 10px 0;
+	
+}
+.u-menu-hd a{
+	color: @fColorGray;
+	float: right;
+	margin-right: 4px;
+}
+.m-menu-bd a{
+	font-size: 18px;
+	padding: 13px 0 13px 20px;
+	display: block;
+	color: @fColorWhite;
+}
+.m-menu-bd .u-menu-icon{
+	margin-right: 10px;
+	color: @fColorWhite
+}
+.m-menu-bd .u-sub-menu{
+	.f-fr;
+	margin-right: 10px;
+}
+.m-menu-bd .z-sel{
+	.menuSelBlue;
+}
+.m-menu-bd .z-hide{
+	display: none;
+}
+/*菜单主体 展开 end*/
+
+/*菜单栏 收缩 begin*/
+.m-side-hd-sm{
+	width: 50px;
+}
+/*菜单栏 收缩 end*/
+
+

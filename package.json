@@ -26,6 +26,10 @@
     "响应式",
     "组件化"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Tsqle/FUIT.git"
+  },
   "author": "liuyh <374659635@qq.com> (http://blog.liuyanhao.cn/)",
   "license": "MIT"
 }
