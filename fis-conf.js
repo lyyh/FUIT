@@ -21,12 +21,14 @@ fis.match('::package', {
 fis.hook('amd', {
     paths: {
         $: '/dev/common/lib/js/jquery',
+        domready: '/dev/common/lib/js/domReady',
         bs: '/dev/common/lib/bootstrap/js/bootstrap',
         mk: '/dev/common/lib/js/mock',
         handlebars:"/dev/common/lib/js/handlebars",
         loadModule: '/dev/system/js/loadModule',
         loadMenus: '/dev/system/js/loadMenus',
-        conf: '/dev/system/conf',
+        tabActions: '/dev/system/js/tabActions',
+        conf: '/dev/system/conf'
     },
     shim: {
         bs:{

@@ -6,7 +6,7 @@
 		"level": 1,
 		"text": "学生管理",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": [
 		{
 			"id": 2,
@@ -15,7 +15,7 @@
 			"level": 2,
 			"text": "删除学生",
 			"icon": "fa fa-users fa-fa",
-			"url": "",
+			"url": "123123",
 			"children": [
 				{
 			"id": 2,
@@ -24,7 +24,7 @@
 			"level": 3,
 			"text": "删除学生",
 			"icon": "fa fa-users fa-fa",
-			"url": "",
+			"url": "123123",
 			"children": []
 		},
 		{

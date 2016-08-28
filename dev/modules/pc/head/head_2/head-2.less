@@ -19,7 +19,32 @@
 }
 /*头部模块 end*/
 /*tab 标签 begin*/
+.tab-hover{
+	&:hover{
+		cursor: pointer;
+		text-decoration: none;
+		background-color: #909090;
+		color: #fff;
+	}
+	.transition;
+}
 .m-tab{
+	float: left;
+}
+.m-tab .u-tab-arrow{
+	box-sizing: border-box;
+	float: left;
+	z-index: 10;
+	padding: 25px 5px;
+	border-right: 1px solid #ccc;
+	.tab-hover;
+}
+.m-tab .m-tab-box{
+	overflow: hidden;
+	width: 591px;
+	float: left;
+}
+.m-tab .u-tab-list{
 	float: left;
 }
 .m-tab .u-tab-list li{
@@ -29,21 +54,9 @@
 	display: inline-block;
 	color: #b7b7b7;
 	font-size: 18px;
-	padding: 28px;
+	padding: 28px 10px;
 	border-right: 1px solid #ccc;
-	&:hover{
-		cursor: pointer;
-		text-decoration: none;
-		background-color: #909090;
-		color: #fff;
-	}
-	&:visited{
-		cursor: pointer;
-		text-decoration: none;
-		background-color: #909090;
-		color: #fff;
-	}
-	.transition;
+	.tab-hover;
 }
 .tab-close{
 	display: inline-block;
