@@ -41,6 +41,10 @@ fis.hook('amd', {
         $: {
           deps: ['$'],
           exports: '$'
+        },
+        tabActions: {
+          deps: ['$'],
+          exports: 'tabActions'
         }
     }
 });

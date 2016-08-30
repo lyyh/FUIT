@@ -15,12 +15,12 @@ define(['$', 'handlebars'], function($, HB) {
 					offset = 10 * level;
 
 				if(item.children.length){
-					str += '<li><a class="subMenu" data-sel="" data-href="'+ item.url +'"><i class="'+item.icon+'" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i><span class="menu-text">' + item.text + '</span><i class="fa fa-fw fa-angle-up fa-lg u-sub-menu"></i></a>';
+					str += '<li><a class="subMenu" data-sel="" data-href="'+ item.url +'" ><i class="'+item.icon+'" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i><span class="menu-text">' + item.text + '</span><span class="menu-arrow"><i class="fa fa-fw fa-angle-up fa-lg u-sub-menu"></i></span></a>';
 					str += '<ul class="z-hide">';
 					getTreeHtml(item.children);
 					str += '</ul>';
 				}
-				else str += '<li><a data-href="'+ item.url +'"><i class="'+item.icon+'" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i>' + item.text + '</a>';
+				else str += '<li><a class="subMenu" data-href="'+ item.url +'" data-menuId = "'+item.id+'"><i class="'+item.icon+'" style="margin-right:'+offset+'px;margin-left:'+ offset +'px"></i><span class="menu-text">' + item.text + '</span></a>';
 				
 				str += '</li>';
 			})
@@ -57,7 +57,7 @@ define(['$', 'handlebars'], function($, HB) {
 		/*显示菜单点击效果 end*/
 		/*菜单展开 收缩 begin*/
 		$('.subMenu').click(function(){
-			$(this).children('i').eq(1).toggleClass('fa-angle-down')
+			$(this).find('.menu-arrow i').toggleClass('fa-angle-down')
 
 			if(!$(this).attr('data-sel')){
 				$(this).siblings('ul').slideDown(400)

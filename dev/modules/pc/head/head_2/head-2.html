@@ -3,55 +3,22 @@
 	<link rel="stylesheet" type="text/css" href="head-2.less"></head>
 <body>
 	<div class="m-hd clearfix">
-		<div class="m-tab clearfix">
-			<!-- <span class='u-tab-arrow'><i class='fa fa-chevron-left fa-2x'></i></span> -->
-			<div class="m-tab-box">
-			<ul class='u-tab-list clearfix'>
-				<li class='u-tab-list-1'>
-					<a>
-						<span>学生管理</span>
-						<span class='tab-close'><i class='fa fa-close'></i></span>
-					</a>
-				</li>
-				<li class='u-tab-list-1'>
-					<a>
-						<span>学生管理</span>
-						<span class='tab-close'><i class='fa fa-close'></i></span>
-					</a>
-				</li>
-				<li class='u-tab-list-1'>
-					<a>
-						<span>学生管理</span>
-						<span class='tab-close'><i class='fa fa-close'></i></span>
-					</a>
-				</li>
-				<li class='u-tab-list-1'>
-					<a>
-						<span>学生管理</span>
-						<span class='tab-close'><i class='fa fa-close'></i></span>
-					</a>
-				</li>
-				<li class='u-tab-list-1'>
-					<a>
-						<span>学生管理</span>
-						<span class='tab-close'><i class='fa fa-close'></i></span>
-					</a>
-				</li>
-				<li class='u-tab-list-1'>
-					<a>
-						<span>学生管理</span>
-						<span class='tab-close'><i class='fa fa-close'></i></span>
-					</a>
-				</li>
-				<li class='u-tab-list-1'>
-					<a>
-						<span>学生管理</span>
-						<span class='tab-close'><i class='fa fa-close'></i></span>
-					</a>
-				</li>
-			</ul>
-			</div>
-			<!-- <span class='u-tab-arrow'><i class='fa fa-chevron-right fa-2x'></i></span> -->
+		<div class="m-tab">
+			<!-- 普通标签列表 begin-->
+			<ul class='u-tab-list clearfix'></ul>
+			<!-- 普通标签列表 end-->
+			
+			<div class='m-tab-num z-hide'>
+				<div class='u-tab-num'>
+					<span><i class='fa fa-angle-double-down'></i></span>
+					<span><i class='fa fa-list-ol'></i></span>
+					<span class='tab-num'>0</span>
+				</div>
+				<div class='m-tab-down'>
+					<ul class='u-tab-down-list'>
+					</ul>
+				</div>
+			</div>∏
 		</div>
 		<div class="m-setting">
 			<ul class="m-list clearfix">
@@ -76,12 +43,8 @@
 	<script type="text/javascript" src='../../../../common/lib/js/require.js'></script>
 	<script type="text/javascript">
 		require(['tabActions'],function(ta){
-			var close_name = '.tab-close',
-				tab = '.u-tab-list-1',
-				tabbox = '.u-tab-list';
-
-			ta.tabEventListen(tabbox,tab,close_name);
-			ta.addTabEvent();
+			ta.tabEventListen();
+			ta.addTabEvent(3); //最多显示标签数量 5
 		})
 	</script>
 </body>

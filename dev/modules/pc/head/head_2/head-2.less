@@ -1,16 +1,20 @@
 @import '/dev/modules/common/css/head/custom-hd-sim.less';
+/*公共class*/
+.border-right{
+	border-right: 1px solid #ccc;
+}
 /*头部模块 begin*/
 .m-hd{
-	height: 100%;
+	height: 60px;	
 	box-shadow: 0 1px 1px 1px #ddd;
 }
 .m-setting{
-	float: right;
+	.f-fr;
 }
 .m-list{
 	li{
 		float: left;
-		padding: 25px;
+		padding: 18px 10px;
 		&:hover{
 			cursor: pointer;
 			.bgDeepTran;
@@ -28,37 +32,80 @@
 	}
 	.transition;
 }
-.m-tab{
-	float: left;
-}
 .m-tab .u-tab-arrow{
 	box-sizing: border-box;
 	float: left;
 	z-index: 10;
 	padding: 25px 5px;
-	border-right: 1px solid #ccc;
+	.border-right;
 	.tab-hover;
 }
-.m-tab .m-tab-box{
+.m-tab-box{
 	overflow: hidden;
-	width: 591px;
-	float: left;
 }
-.m-tab .u-tab-list{
-	float: left;
+.m-tab .u-tab-list,.m-tab .u-tab-list li{
+	.f-fl;
 }
-.m-tab .u-tab-list li{
-	float: left;
-}
-.m-tab .u-tab-list a{
+.m-tab .u-tab-list a,.u-tab-down-list a{
 	display: inline-block;
 	color: #b7b7b7;
 	font-size: 18px;
-	padding: 28px 10px;
-	border-right: 1px solid #ccc;
+	padding: 20px 10px;
+	.border-right;
 	.tab-hover;
 }
-.tab-close{
+
+/*文本溢出 begin*/
+.text-overflow{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	display: inline-block;
+	text-align: center;
+}
+.m-tab .u-tab-list-text{
+	width: 127px;
+	.text-overflow;
+}
+.m-tab-down .u-tab-list-text{
+	.text-overflow;
+	width: 127px;
+}
+/*文本溢出 end*/
+
+
+.u-tab-down-list li{
+	.tab-hover;
+}
+.m-tab-num{
+	position: relative;
+	.f-fl;
+	.border-right;
+}
+.m-tab-num .u-tab-num{
+	.tab-hover;
+	padding:24px 2px;
+}
+.m-tab-down{
+	position: absolute;
+	z-index: 100;
+	top: 62px;
+	left: -140px;
+	.m-hd-bg;
+	opacity: 0;
+	.z-hide;
+}
+.m-tab-down .u-tab-down-list li{
+	border:1px solid #ccc;
+}
+.m-tab-down .u-tab-list-1 a{
+	text-align: center;
+	width: 169px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.u-tab-list-1 .u-tab-close{
 	display: inline-block;
 	text-align: center;
 	width: 20px;
@@ -69,5 +116,11 @@
 	&:hover{
 		background-color: #333;
 	}
+}
+.m-tab-down .u-tab-down-list .u-tab-close{
+	.f-fr;
+}
+.z-hide{
+	display: none;
 }
 /*tab 标签 end*/

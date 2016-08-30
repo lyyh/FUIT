@@ -18,7 +18,7 @@
 			"url": "123123",
 			"children": [
 				{
-			"id": 2,
+			"id": 3,
 			"subId": 1,
 			"menus_status": 0,
 			"level": 3,
@@ -28,7 +28,7 @@
 			"children": []
 		},
 		{
-		"id": 3,
+		"id": 4,
 		"subId": 1,
 		"menus_status": 0,
 		"level": 3,
@@ -40,7 +40,7 @@
 			]
 		},
 		{
-		"id": 3,
+		"id": 5,
 		"subId": 1,
 		"menus_status": 0,
 		"level": 2,
@@ -52,7 +52,7 @@
 		]
 	},
 	{
-		"id": 4,
+		"id": 6,
 		"subId": 0,
 		"menus_status": 0,
 		"level": 1,
@@ -62,7 +62,7 @@
 		"children": [
 		{
 
-			"id": 6,
+			"id": 7,
 			"subId": 1,
 			"menus_status": 0,
 			"level": 2,
@@ -72,11 +72,11 @@
 			"children": []
 		},
 		{
-		"id": 7,
+		"id": 8,
 		"subId": 1,
 		"menus_status": 0,
 		"level": 2,
-		"text": "更改系统配置",
+		"text": "更改系统配置配置",
 		"icon": "fa fa-users fa-fa",
 		"url": "",
 		"children": []
@@ -84,11 +84,31 @@
 		]
 	},
 	{
-		"id": 5,
+		"id": 9,
 		"subId": 0,
 		"menus_status": 0,
 		"level": 1,
 		"text": "用户管理",
+		"icon": "fa fa-users fa-fa",
+		"url": "",
+		"children": []
+	},
+	{
+		"id": 10,
+		"subId": 0,
+		"menus_status": 0,
+		"level": 1,
+		"text": "高级管理",
+		"icon": "fa fa-users fa-fa",
+		"url": "",
+		"children": []
+	},
+	{
+		"id": 11,
+		"subId": 0,
+		"menus_status": 0,
+		"level": 1,
+		"text": "权限管理",
 		"icon": "fa fa-users fa-fa",
 		"url": "",
 		"children": []
