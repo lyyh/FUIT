@@ -50,11 +50,13 @@ define(['$', 'handlebars'], function($, HB) {
 	function menuActions(){
 		/*显示菜单点击效果 begin*/
 		$('.m-menu-bd a').click(function(){
+			//菜单栏点击效果
 			$('.m-menu-bd a:not('+this+')').removeClass('z-sel');
 			$(this).toggleClass('z-sel');
-		})
 
+		})
 		/*显示菜单点击效果 end*/
+
 		/*菜单展开 收缩 begin*/
 		$('.subMenu').click(function(){
 			$(this).find('.menu-arrow i').toggleClass('fa-angle-down')

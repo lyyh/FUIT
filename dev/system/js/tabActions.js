@@ -1,6 +1,7 @@
 define(function() {
 	//存放tab标签的数组
-	var tabArray = [];
+	var tabArray = [],
+		max_num = 0;
 
 	/*tab 标签事件 begin*/
 	function tabEventListen() {
@@ -9,7 +10,7 @@ define(function() {
 
 			//多余标签移至普通标签
 			if ($('.tab-num').html() > 0) {
-				var html = tabArray[5].html;
+				var html = tabArray[max_num].html;
 				$('.m-tab-down .u-tab-list-1').eq(0).remove();
 				$('.m-tab .u-tab-list').append(html);
 			}
@@ -33,7 +34,11 @@ define(function() {
 
 		//多余标签模块 显示和隐藏
 		$('.u-tab-num').click(function() {
+			tabDownHandler();
+		})
 
+		//处理多余标签模块
+		function tabDownHandler() {
 			if ($('.m-tab-down').css('left') == '-128px')
 				$('.m-tab-down').animate({
 					left: -140,
@@ -48,7 +53,7 @@ define(function() {
 					opacity: 1
 				})
 			}
-		})
+		}
 
 		//点击删除多余标签
 		$('.u-tab-down-list').on('click', ' .u-tab-close', function() {
@@ -66,11 +71,21 @@ define(function() {
 			$('.tab-num').html(--tab_num);
 			if (tab_num === 0) $('.m-tab-num').hide();
 		})
+
+		//标签点击效果
+		$('.u-tab-list,.u-tab-down-list').on('click', '.u-tab-list-1', function() {
+			tabDownHandler();
+
+				//去掉其他的点击效果
+			$('.u-tab-list-1').removeClass('z-sel')
+			$(this).addClass('z-sel');
+		})
 	}
 	/*tab 标签事件 end*/
 
 	/*动态添加 tab begin*/
-	function addTabEvent(max_num) {
+	function addTabEvent(maxNum) {
+		max_num = maxNum;
 		//点击菜单添加标签
 		$('.m-menu-bd').on('click', 'a', function() {
 			var text = $(this).find('.menu-text').html(),
@@ -85,8 +100,9 @@ define(function() {
 					return;
 				}
 
+			$('.u-tab-list-1').removeClass('z-sel');
 			if ($('.u-tab-list').children().length < max_num) {
-				tab_html = "<li class='u-tab-list-1'><a><span class='u-tab-list-text'>" + text + "</span><span class='u-tab-close' data-id='" + menu_id + "'><i class='fa fa-close'></i></span></a></li>";
+				tab_html = "<li class='u-tab-list-1 z-sel'><a><span class='u-tab-list-text'>" + text + "</span><span class='u-tab-close' data-id='" + menu_id + "'><i class='fa fa-close'></i></span></a></li>";
 				$('.u-tab-list').append(tab_html);
 
 			} else { //显示标签数量
@@ -99,7 +115,7 @@ define(function() {
 				var tab_num = $('.tab-num').html();
 				$('.tab-num').html(++tab_num);
 
-				tab_html = "<li class='u-tab-list-1'><a><span class='u-tab-list-text'>" + text + "</span><span class='u-tab-close' data-id='" + menu_id + "'><i class='fa fa-close'></i></span></a></li>";
+				tab_html = "<li class='u-tab-list-1 z-sel'><a><span class='u-tab-list-text'>" + text + "</span><span class='u-tab-close' data-id='" + menu_id + "'><i class='fa fa-close'></i></span></a></li>";
 				$('.u-tab-down-list').append(tab_html);
 			}
 

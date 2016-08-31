@@ -1,5 +1,8 @@
 @import '/dev/modules/common/css/side/custom-side-sim.less';
 /*菜单头部 begin*/
+.m-side-hd{
+	height: 7%;
+}
 .m-side-hd .u-icon{
 	padding:9px;
 	display: inline-block;
@@ -23,6 +26,9 @@
 }
 /*菜单头部 end*/
 /*菜单主体 展开 begin*/
+.u-menu-hd{
+	height: 5%;
+}
 .u-menu-hd,.m-menu-bd a{
 	&:hover{
 		cursor: pointer;
@@ -39,6 +45,9 @@
 	color: @fColorGray;
 	float: right;
 	margin-right: 4px;
+}
+.m-menu-bd{
+	width: 280px;
 }
 .m-menu-bd a{
 	font-size: 18px;
@@ -59,6 +68,15 @@
 }
 .m-menu-bd .z-hide{
 	display: none;
+}
+.m-menu-list-box{
+	height: 95%;
+	width: 297px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.m-menu-list{
+	height: 93%;
 }
 /*菜单主体 展开 end*/
 
