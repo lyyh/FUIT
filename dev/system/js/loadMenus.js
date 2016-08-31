@@ -26,6 +26,50 @@ define(['$', 'handlebars'], function($, HB) {
 			})
 		}
 	})
+
+	HB.registerHelper('smTree',function(){
+		var str = '';
+		if (this.length){
+			str += '<ul class="m-menu-list-sm">';
+			getSmTreeHtml(this)
+			str += '</ul>';
+		}
+		return new HB.SafeString(str);
+
+		function getSmTreeHtml(trees){
+			trees.forEach(function(item) {
+				var level  = item.level,
+					offset = 10 * level;
+
+				if(item.children.length){
+					str += '<li class="u-menu-list-sm"><span class="u-list-sm-btn"><i class="fa fa-user fa-2x fa-fw"></i></span>';
+					str += '<ul class="z-hide">';
+					getChildrenHtml(item.children);
+					str += '</ul>';
+				}
+				else str += '<li class="u-menu-list-sm"><a class="u-list-sm-subbtn" data-href="'+ item.url +'" data-menuId = "'+item.id+'" data-text="'+ item.text +'"><i class="fa fa-user fa-2x fa-fw"></i></a>';
+				
+				str += '</li>';
+			})
+		}
+
+		function getChildrenHtml(items){
+			items.forEach(function(item) {
+				var level  = item.level,
+					offset = 200 * (level - 1);
+
+				if(item.children.length){
+					str += '<li class="sm-subMenu"><a  data-sel="" data-href="'+ item.url +'" ><i class="'+item.icon+'" style=""></i><span class="menu-text">' + item.text + '</span><span class="menu-arrow"><i class="fa fa-fw fa-angle-up fa-lg u-sub-menu"></i></span></a>';
+					str += '<ul class="z-hide" style="margin:0 0 0 ' + offset + 'px">';
+					getChildrenHtml(item.children);
+					str += '</ul>';
+				}
+				else str += '<li class="sm-subMenu"><a data-href="'+ item.url +'" data-menuId = "'+item.id+'"><i class="'+item.icon+'" style=""></i><span class="menu-text">' + item.text + '</span></a>';
+				
+				str += '</li>';
+			})
+		}
+	})
 	/*注册helper end*/
 
 	/*模板转化成html begin*/
@@ -38,10 +82,14 @@ define(['$', 'handlebars'], function($, HB) {
 
 	function createMenus(tree) {
 		var source = $("#menusTree").html(), //handlebars模板
+			source_sm = $("#smMenusTree").html(),
 			tmpl = HB.compile(source),
-			html = tmpl(tree);
+			tmpl_sm = HB.compile(source_sm),
+			html = tmpl(tree),
+			html_sm = tmpl_sm(tree);
 
 		$('.m-menu-bd').append(html); //html插入节点
+		$('.m-menu-bd-sm').append(html_sm);
 		menuActions();
 	}
 	/*模板转化成html end*/
@@ -92,6 +140,24 @@ define(['$', 'handlebars'], function($, HB) {
 			$('.g-side-bd').show(200);
 		})
 		/*侧栏展开 收缩 end*/
+
+		/*侧栏缩小 being*/
+		//显示下级菜单
+		$('.u-menu-list-sm').mouseover(function(){
+			$(this).children('ul').show();
+		})
+		$('.u-menu-list-sm').mouseout(function(){
+			$(this).children('ul').hide();
+		})
+		$('.sm-subMenu').mouseover(function() {
+			$(this).children('ul').show();
+			$(this).children('a').children('span').eq(1).children('i').addClass('fa-angle-down');
+		});
+		$('.sm-subMenu').mouseout(function() {
+			$(this).children('ul').hide();
+			$(this).children('a').children('span').eq(1).children('i').removeClass('fa-angle-down');
+		});
+		/*侧栏缩小 end*/
 
 	}
 	/*绑定菜单事件 end*/

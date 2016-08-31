@@ -3,7 +3,7 @@
 
 /*颜色选项 end*/
 /*背景颜色 begin*/
-.m-side,.m-side-sm{
+.m-side,.m-side-sm,.u-menu-list-sm ul{
 	.menuBlack;
 }
 
@@ -23,3 +23,14 @@
 	background-color: @bgColorGray;
 }
 /*菜单选中颜色 end*/
+
+/*菜单选中样式 begin*/
+.menuHover{
+	&:hover{
+		cursor: pointer;
+		.menuSelBlue;
+		text-decoration: none;
+	}
+	.transition;
+}
+/*菜单选中样式 end*/

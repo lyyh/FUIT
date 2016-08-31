@@ -10,6 +10,9 @@ define(function() {
 			//去掉其他的点击效果
 			$('.u-tab-list-1').removeClass('z-sel')
 			$(this).addClass('z-sel');
+
+			//隐藏多余标签模块
+			hideTabModule();
 		})
 
 		//关闭普通标签
@@ -77,6 +80,16 @@ define(function() {
 		//标签点击效果
 		$('.u-tab-list,.u-tab-down-list').on('click', '.u-tab-list-1', function() {
 			//是否隐藏多余标签
+			hideTabModule();
+
+			//去掉其他的点击效果
+			$('.u-tab-list-1,.m-tab-indexPage').removeClass('z-sel')
+			$(this).addClass('z-sel');
+		})
+
+		//是否隐藏多余模块
+		function hideTabModule(){
+			//是否隐藏多余标签
 			if ($('.m-tab-down').css('left') == '-128px') {
 				$('.m-tab-down').animate({
 					left: -140,
@@ -85,25 +98,23 @@ define(function() {
 					$('.m-tab-down').hide();
 				});
 			}
-
-			//去掉其他的点击效果
-			$('.u-tab-list-1,.m-tab-indexPage').removeClass('z-sel')
-			$(this).addClass('z-sel');
-		})
+		}
 	}
 	/*tab 标签事件 end*/
 
 	/*动态添加 tab begin*/
 	function addTabEvent(maxNum) {
 		max_num = maxNum;
-		//点击菜单添加标签
-		$('.m-menu-bd').on('click', 'a', function() {
+		//点击菜单添加标签(大侧栏)
+		$('.m-menu-bd,.m-menu-bd-sm').on('click', 'a', function() {
+			console.log(123)
 			var text = $(this).find('.menu-text').html(),
 				menu_id = $(this).attr('data-menuId'),
 				tab_html = '';
 
 			//判断menu_id是否为空	
 			if (!menu_id) return;
+			if(!text)text = $(this).attr('data-text');
 
 			//判断标签是否存在，若存在赋予点击状态
 			for (var i = 0; i < tabArray.length; i++)
@@ -154,6 +165,8 @@ define(function() {
 			});
 
 		})
+
+		
 
 		function loadMainContent(url) {
 			$.get(url, function(data) {

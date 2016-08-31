@@ -4,17 +4,19 @@
 <body>
 	<div class="m-hd clearfix">
 		<div class="m-tab">
-			<!-- 首页标签 -->
+			<!-- 首页标签 begin-->
 			<div class="m-tab-indexPage">
 				<span>
 					<i class='fa fa-navicon fa-lg'></i>
 				</span>
 			</div>
-			
-			<!-- 普通标签列表 -->
+			<!-- 首页标签 end -->
+
+			<!-- 普通标签列表 begin-->
 			<ul class='u-tab-list clearfix'></ul>
-			
-			<!-- 多余标签数量 -->
+			<!-- 普通标签列表 end-->
+
+			<!-- 多余标签数量 begin-->
 			<div class='m-tab-num z-hide'>
 				<div class='u-tab-num'>
 					<span><i class='fa fa-angle-double-down'></i></span>
@@ -26,9 +28,10 @@
 					</ul>
 				</div>
 			</div>
+			<!-- 多余标签数量 end-->
 		</div>
 
-		<!-- 用户设置 -->
+		<!-- 用户设置 begin-->
 		<div class="m-setting">
 			<ul class="m-list clearfix">
 				<li>
@@ -48,13 +51,14 @@
 				</li>
 			</ul>
 		</div>
+		<!-- 用户设置 end-->
 	</div>
 
 	<script type="text/javascript" src='../../../../common/lib/js/require.js'></script>
 	<script type="text/javascript">
 		require(['tabActions'],function(TA){
 			TA.tabEventListen();
-			TA.addTabEvent(3); //最多显示标签数量 5
+			TA.addTabEvent(4); //最多显示标签数量 5
 		})
 	</script>
 </body>
