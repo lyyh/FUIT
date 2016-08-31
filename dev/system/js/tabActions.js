@@ -5,6 +5,13 @@ define(function() {
 
 	/*tab 标签事件 begin*/
 	function tabEventListen() {
+		//点击首页标签
+		$('.m-tab-indexPage').click(function(){
+			//去掉其他的点击效果
+			$('.u-tab-list-1').removeClass('z-sel')
+			$(this).addClass('z-sel');
+		})
+
 		//关闭普通标签
 		$('.u-tab-list').on('click', '.u-tab-close', function() {
 
@@ -34,11 +41,6 @@ define(function() {
 
 		//多余标签模块 显示和隐藏
 		$('.u-tab-num').click(function() {
-			tabDownHandler();
-		})
-
-		//处理多余标签模块
-		function tabDownHandler() {
 			if ($('.m-tab-down').css('left') == '-128px')
 				$('.m-tab-down').animate({
 					left: -140,
@@ -53,7 +55,7 @@ define(function() {
 					opacity: 1
 				})
 			}
-		}
+		})
 
 		//点击删除多余标签
 		$('.u-tab-down-list').on('click', ' .u-tab-close', function() {
@@ -74,10 +76,18 @@ define(function() {
 
 		//标签点击效果
 		$('.u-tab-list,.u-tab-down-list').on('click', '.u-tab-list-1', function() {
-			tabDownHandler();
+			//是否隐藏多余标签
+			if ($('.m-tab-down').css('left') == '-128px') {
+				$('.m-tab-down').animate({
+					left: -140,
+					opacity: 0
+				}, 400, function() {
+					$('.m-tab-down').hide();
+				});
+			}
 
-				//去掉其他的点击效果
-			$('.u-tab-list-1').removeClass('z-sel')
+			//去掉其他的点击效果
+			$('.u-tab-list-1,.m-tab-indexPage').removeClass('z-sel')
 			$(this).addClass('z-sel');
 		})
 	}
@@ -95,8 +105,26 @@ define(function() {
 			//判断menu_id是否为空	
 			if (!menu_id) return;
 
+			//判断标签是否存在，若存在赋予点击状态
 			for (var i = 0; i < tabArray.length; i++)
 				if (tabArray[i].id == menu_id) {
+					for (var j = 0; j < $('.u-tab-close').length; j++)
+						if ($('.u-tab-close').eq(j).attr('data-id') == menu_id) {
+							//去掉其他的点击效果
+							$('.u-tab-list-1').removeClass('z-sel')
+							$('.u-tab-close').eq(j).parents('.u-tab-list-1').addClass('z-sel');
+
+							//是否隐藏多余标签
+							if ($('.m-tab-down').css('left') == '-128px') {
+								$('.m-tab-down').animate({
+									left: -140,
+									opacity: 0
+								}, 400, function() {
+									$('.m-tab-down').hide();
+								});
+							}
+						}
+
 					return;
 				}
 
