@@ -15,7 +15,7 @@
 			"level": 2,
 			"text": "删除学生",
 			"icon": "fa fa-users fa-fa",
-			"url": "123123",
+			"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 			"children": [
 				{
 			"id": 3,
@@ -24,7 +24,7 @@
 			"level": 3,
 			"text": "删除学生",
 			"icon": "fa fa-users fa-fa",
-			"url": "123123",
+			"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 			"children": []
 		},
 		{
@@ -34,7 +34,7 @@
 		"level": 3,
 		"text": "添加学生",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": []
 		}
 			]
@@ -46,7 +46,7 @@
 		"level": 2,
 		"text": "添加学生",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": []
 		}
 		]
@@ -58,7 +58,7 @@
 		"level": 1,
 		"text": "系统管理",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": [
 		{
 
@@ -68,7 +68,7 @@
 			"level": 2,
 			"text": "添加模块",
 			"icon": "fa fa-users fa-fa",
-			"url": "",
+			"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 			"children": []
 		},
 		{
@@ -78,7 +78,7 @@
 		"level": 2,
 		"text": "更改系统配置配置",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": []
 		}	
 		]
@@ -90,7 +90,7 @@
 		"level": 1,
 		"text": "用户管理",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": []
 	},
 	{
@@ -100,7 +100,7 @@
 		"level": 1,
 		"text": "高级管理",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": []
 	},
 	{
@@ -110,7 +110,7 @@
 		"level": 1,
 		"text": "权限管理",
 		"icon": "fa fa-users fa-fa",
-		"url": "",
+		"url": "/FUIT/modules/pc/main/main_1/main-1.html",
 		"children": []
 	}
 ]
